@@ -814,4 +814,10 @@ public class CommonHBaseConnection extends HBaseConnection {
     // from
     return o instanceof ImmutableBytesWritable;
   }
+
+  @Override
+  public void obtainAuthTokenForJob( org.pentaho.hadoop.shim.api.Configuration conf ) throws Exception {
+    // TODO Auto-generated method stub
+    
+  }
 }

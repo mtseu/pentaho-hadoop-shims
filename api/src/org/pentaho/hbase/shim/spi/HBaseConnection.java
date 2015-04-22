@@ -29,6 +29,7 @@ import java.util.NavigableMap;
 import java.util.Properties;
 
 import org.pentaho.di.core.variables.VariableSpace;
+import org.pentaho.hadoop.shim.api.Configuration;
 import org.pentaho.hbase.shim.api.ColumnFilter;
 import org.pentaho.hbase.shim.api.HBaseValueMeta;
 
@@ -488,4 +489,6 @@ public abstract class HBaseConnection {
   public static boolean isEmpty(String toCheck) {
     return (toCheck == null || toCheck.length() == 0);
   }
+
+  public abstract void obtainAuthTokenForJob( Configuration conf ) throws Exception;
 }

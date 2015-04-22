@@ -23,6 +23,7 @@
 package org.pentaho.hadoop.shim.cdh53.delegating;
 
 import org.pentaho.di.core.variables.VariableSpace;
+import org.pentaho.hadoop.shim.api.Configuration;
 import org.pentaho.hbase.shim.api.ColumnFilter;
 import org.pentaho.hbase.shim.api.HBaseValueMeta;
 import org.pentaho.hbase.shim.cdh53.wrapper.HBaseConnectionInterface;
@@ -528,5 +529,10 @@ public class DelegatingHBaseConnection extends HBaseConnection implements HBaseC
   @Override
   public String toString() {
     return delegate.toString();
+  }
+
+  @Override
+  public void obtainAuthTokenForJob( Configuration conf ) throws Exception {
+    delegate.obtainAuthTokenForJob( conf ); 
   }
 }

@@ -38,6 +38,7 @@ import java.util.TreeMap;
 
 import org.pentaho.di.core.variables.VariableSpace;
 import org.pentaho.hadoop.shim.ShimVersion;
+import org.pentaho.hadoop.shim.api.Configuration;
 import org.pentaho.hbase.shim.api.ColumnFilter;
 import org.pentaho.hbase.shim.api.HBaseValueMeta;
 import org.pentaho.hbase.shim.common.CommonHBaseBytesUtil;
@@ -837,5 +838,11 @@ public class FakeHBaseConnection extends HBaseConnection {
     if (m_currentResultSetRow == null) {
       throw new Exception("No current resut set row available!");
     }
+  }
+
+  @Override
+  public void obtainAuthTokenForJob( Configuration conf ) throws Exception {
+    // TODO Auto-generated method stub
+    
   }
 }

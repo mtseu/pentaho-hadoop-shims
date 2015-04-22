@@ -23,6 +23,7 @@
 package org.pentaho.hbase.shim.cdh53.wrapper;
 
 import org.pentaho.di.core.variables.VariableSpace;
+import org.pentaho.hadoop.shim.api.Configuration;
 import org.pentaho.hbase.shim.api.ColumnFilter;
 import org.pentaho.hbase.shim.api.HBaseValueMeta;
 import org.pentaho.hbase.shim.spi.HBaseBytesUtilShim;
@@ -128,5 +129,7 @@ public interface HBaseConnectionInterface {
   public abstract boolean tableExists( String tableName ) throws Exception;
 
   public abstract boolean targetTableIsAutoFlush() throws Exception;
+
+  public abstract void obtainAuthTokenForJob( Configuration conf ) throws Exception;
 
 }
